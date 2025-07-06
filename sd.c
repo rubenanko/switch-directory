@@ -17,19 +17,16 @@ int main(int argc, char ** argv){
     char buffer[1024] = "\0";
     char target;
 
-    if(argc == 4)
+    if(argc == 3)
     {
-        if(strcmp(argv[1],"set")==0)
-        {
             strcat(buffer,TEMPLATE);
-            target = (char) argv[2][0];
+            target = (char) argv[1][0];
             buffer[7] = target;
             buffer[8] = '=';
             buffer[9] = '\0';
-            strcat(buffer,argv[3]);
+            strcat(buffer,argv[2]);
             strcat(buffer,"\r");
             inject_shell(buffer);
-        }
     } else {
         if(argc == 2)
         {
